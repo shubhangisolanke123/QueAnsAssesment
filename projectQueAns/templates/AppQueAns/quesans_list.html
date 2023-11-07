@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Questions and Answers</title>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Title/Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+            <tr>
+                <td>Question</td>
+                <td>{{ question.title }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>{{ question.content }}</td>
+            </tr>
+            {% endfor %}
+            {% for answer in answers %}
+            <tr>
+                <td>Answer</td>
+                <td>{{ answer.content }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html' %}
+
+<html>
+<head>
+    
+  {% block title %}
+
+    <title>Add Questions</title>
+
+    {% endblock %}
+</head>
+<body>
+  {% block content %}
+  <div>
+    <form method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="ADD QUESTIONS"/>
+
+
+    </form>
+
+
+  </div>
+  {% endblock %}
+
+</body>
+</html>
