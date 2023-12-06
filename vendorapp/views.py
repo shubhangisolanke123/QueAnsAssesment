@@ -6,7 +6,7 @@ from .serializers import VendorSerializer, PurchaseOrderSerializer
 
 @api_view(['GET', 'POST'])
 def vendor_list_create(request):
-    if request.method == 'GET':
+    if request.method == 'GET': 
         vendors = Vendor.objects.all()
         serializer = VendorSerializer(vendors, many=True)
         return Response(serializer.data)
@@ -69,6 +69,7 @@ def purchase_order_retrieve_update_delete(request, pk):
     elif request.method == 'DELETE':
         purchase_order.delete()
         return Response(status=204)
+
     
 @api_view(['GET'])
 def vendor_performance(request, vendor_id):
