@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Vendor Information</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Vendor Information</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact Details</th>
+                <th>Address</th>
+                <th>Vendor Code</th>
+                <th>On-Time Delivery Rate</th>
+                <th>Quality Rating</th>
+                <th>Response Time</th>
+                <th>Fulfillment Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vendor in vendors %}
+                <tr>
+                    <td>{{ vendor.name }}</td>
+                    <td>{{ vendor.contact_details }}</td>
+                    <td>{{ vendor.address }}</td>
+                    <td>{{ vendor.vendor_code }}</td>
+                    <td>{{ vendor.on_time_delivery_rate }}</td>
+                    <td>{{ vendor.quality_rating }}</td>
+                    <td>{{ vendor.response_time }}</td>
+                    <td>{{ vendor.fulfillment_rate }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
